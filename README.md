@@ -1,143 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Event Title Here]</title>
-    <style>
-        body {
-            font-family: 'Georgia', serif;
-            background-color: #e9ecef;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-            margin: 0;
-            line-height: 1.6;
-        }
-        .invitation {
-            background-color: #ffffff;
-            border-radius: 10px;
-            max-width: 600px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            text-align: center;
-        }
-        .image {
-            width: 100%;
-            height: 250px;
-            background-color: #a8dadc;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #1d3557;
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-        .content {
-            padding: 30px;
-            text-align: left;
-        }
-        h1 {
-            color: #457b9d;
-            font-size: 2.2em;
-            margin-top: 0;
-            text-align: center;
-        }
-        h2 {
-            color: #1d3557;
-            font-size: 1.4em;
-            border-bottom: 2px solid #f1faee;
-            padding-bottom: 5px;
-            margin-top: 25px;
-        }
-        .detail-item {
-            margin-bottom: 10px;
-            display: flex;
-            font-size: 1.1em;
-        }
-        .detail-item strong {
-            color: #457b9d;
-            flex-shrink: 0;
-            width: 100px;
-        }
-        .detail-item span {
-            flex-grow: 1;
-        }
-        a {
-            color: #e63946;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .bring-list {
-            list-style: none;
-            padding-left: 0;
-            text-align: center;
-        }
-        .bring-list li { background: #f1faee;
-            padding: 8px;
-            margin-bottom: 5px;
-            border-radius: 5px;
-            display: inline-block;
-            margin-right: 10px;
-            font-weight: 500:}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Be My Valentine 💕</title>
+
+<style>
+/* Desktop block */
+.desktop-warning {
+    display: none;
+}
+
+/* Mobile only */
+@media (min-width: 768px) {
+    body * {
+        display: none !important;
+    }
+    body {
+        background: #ff758c;
+    }
+    .desktop-warning {
+        display: flex !important;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: Comic Sans MS;
+        text-align: center;
+        font-size: 1.5em;
+    }
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Comic Sans MS', cursive;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 90%;
+    max-width: 360px;
+    background: rgba(255,255,255,0.95);
+    padding: 30px 20px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    z-index: 2;
+}
+
+h1 {
+    color: #e6005c;
+    font-size: 1.9em;
+}
+
+.buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    border: none;
+    border-radius: 40px;
+    padding: 14px 26px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#yes {
+    background: #ff3366;
+    color: white;
+    transform: scale(1);
+}
+
+#no {
+    background: #aaa;
+    color: white;
+    transform: scale(1);
+}
+
+/* Balloons */
+.balloon {
+    position: absolute;
+    bottom: -120px;
+    width: 50px;
+    height: 70px;
+    border-radius: 50%;
+    animation: floatUp linear infinite;
+}
+
+.balloon::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 35px;
+    background: #555;
+    bottom: -35px;
+    left: 50%;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-120vh); opacity: 0; }
+}
+
+/* Hearts */
+.heart {
+    position: absolute;
+    animation: floatHeart 6s linear infinite;
+    color: rgba(255,0,100,0.3);
+}
+
+@keyframes floatHeart {
+    from { transform: translateY(100vh); }
+    to { transform: translateY(-10vh); }
+}
+</style>
 </head>
+
 <body>
-    <div class="invitation">
-        <div class="image">
-          <img src="img/null_0(JPG).jpg" height="200" width="300" > 
-            </div            
-        <div class="content">
-            <h1> Mark Jan Herrera birthday </h1>           
-            <p style="text-align: center; font-style: italic; color: #1d3557;">
-            </p>
-            <h2>Event Details</h2>
-            <div class="detail-item">
-                <strong>📅 Date:</strong> <span>july 13 </span>
-            </div>
-            <div class="detail-item">
-                <strong>⏰ Time:</strong> <span>10AM to 3AM</span>
-            </div>
-            <div class="detail-item">
-                <strong>📍 Location:</strong> <span>venue liwayway homes<br>BLK 30 LOT 3 on liwaywat homes</span>
-            </div>
-            <div class="detail-item" style="margin-top: 20px;">
-                <strong>🗺 Map Link:</strong> 
-                <span><iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15456.93608221855!2d120.91238475!3d14.39411995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d498f375f45f%3A0x633919057b4279b9!2sLiwayway%20Homes%20Subdivision!5e0!3m2!1sen!2sph!4v1700000000000!5m2!1sen!2sph" 
-        width="200" 
-        height="300" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-                </span>
-            </div>
-            <h2>What to Bring</h2>
-            <ul class="bring-list">
-                <li>anything You just need to come </li>
-            </ul>
-            <p style="text-align: center; font-size: 0.9em; margin-top: 5px;">
-                Your presence is the only gift we need!
-            </p>
-            <h2>RSVP & Contact</h2>
-            <div class="detail-item">
-                <strong>👤 Contact:</strong> <span>09971435799 cantact me if you got lost</span>
-            </div>
-            <div class="detail-item">
-                <strong>📧 RSVP By:</strong> <span>july 13</span>
-            </div>
-            <p style="text-align: center; margin-top: 30px; font-weight: bold; color: #1d3557;">
-                cant wait for my birthday
-            </p>
-        </div>
+
+<div class="desktop-warning">
+    📱 Please open this on your phone 💕
+</div>
+
+<div class="card">
+    <h1>crush mo ako no🧐</h1>
+    <div class="buttons">
+        <button id="yes" onclick="yesClick()">YES </button>
+        <button id="no" onclick="noClick()">NO </button>
     </div>
+</div>
+
+<script>
+let yesScale = 1;
+let noScale = 1;
+
+function noClick() {
+    noScale -= 0.15;
+    yesScale += 0.15;
+    if (noScale < 0.2) noScale = 0.2;
+
+    document.getElementById("no").style.transform = `scale(${noScale})`;
+    document.getElementById("yes").style.transform = `scale(${yesScale})`;
+}
+
+function yesClick() {
+    document.body.innerHTML = `
+    <div style="
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        font-family:Comic Sans MS;
+        background:linear-gradient(135deg,#ff758c,#ff7eb3);
+        color:white;
+        padding:20px;">
+        <h1>sabi ko na <br>crush mo pala ako bakla hahaah</h1>
+    </div>`;
+}
+
+// Balloons
+function createBalloon() {
+    const b = document.createElement("div");
+    b.className = "balloon";
+    b.style.left = Math.random() * 100 + "vw";
+    b.style.background = `hsl(${Math.random()*360},80%,70%)`;
+    b.style.animationDuration = 7 + Math.random() * 5 + "s";
+    document.body.appendChild(b);
+    setTimeout(() => b.remove(), 13000);
+}
+setInterval(createBalloon, 800);
+
+// Hearts
+function createHeart() {
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.innerHTML = "❤️";
+    h.style.left = Math.random() * 100 + "vw";
+    h.style.fontSize = 14 + Math.random() * 18 + "px";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 6000);
+}
+setInterval(createHeart, 500);
+</script>
+
 </body>
 </html>
